@@ -1,0 +1,14 @@
+index:
+    path: /
+    controller: App\Controller\UrlController::index
+    methods: GET
+
+url:
+  path: /
+  controller: App\Controller\UrlController::url
+  methods: POST
+
+findurl:
+  path: /{randomString}
+  controller: App\Controller\UrlController::find
+  methods: GET

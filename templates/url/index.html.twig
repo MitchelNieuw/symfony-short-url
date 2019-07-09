@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}URL{% endblock %}
+
+{% block body %}
+
+    {% if urls > 0 %}
+        {% for url in urls %}
+            <a target="_blank" style="margin: 20px;" href="{{ url.shortUrl }}">{{ url.shortUrl }}</a>
+        {% endfor %}
+    {% endif %}
+
+    <form action="/" method="post" style="margin: 20px;">
+        <input type="hidden" name="token" value="{{ csrf_token('create-item') }}"/>
+        <input required type="text" name="url" placeholder="Your url">
+        <button type="submit">Url</button>
+    </form>
+
+{% endblock %}
